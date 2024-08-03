@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { type } = require('os');
 
 const spiceSchema = new mongoose.Schema({
   spicesName: {
@@ -14,10 +13,10 @@ const spiceSchema = new mongoose.Schema({
     required:true
   },
   Image:{
-    type:String,
-    required:true
+    type:String,    
   },
-  spices:[
+
+  process:[
     { 
      type: mongoose.Schema.Types.ObjectId,
      ref: 'processDetails',
@@ -26,6 +25,6 @@ const spiceSchema = new mongoose.Schema({
  
 });
 
-const spicesDetails = mongoose.model('spicesDetails', farmSchema);
+const spicesDetails = mongoose.model('spicesDetails', spiceSchema);
 
 module.exports = spicesDetails;
